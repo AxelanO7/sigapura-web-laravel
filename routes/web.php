@@ -3,7 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
-use App\Http\Controllers\RoleController;
+use App\Http\Controllers\IntroductionController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ShrineController;
+use App\Models\Shrine;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,24 +19,14 @@ use App\Http\Controllers\RoleController;
 |
 */
 
-Route::get('/', function (){
-    return view('role');
-});
+Route ::get('/', [IntroductionController::class, 'index']);
 
-// Route::get('/', [RoleController::class, 'index']);
+Route::get('/visitor', [IntroductionController::class, 'visitor'])->name('visitor');
 
-Route::get('/visitor', function () {
-    return view('biodata_visitor');
-});
+Route::get('/admin', [IntroductionController::class, 'admin'])->name('admin'); 
 
-Route::get('/admin', function () {
-    return view('login_admin');
-}); 
-
-// Auth::routes();
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('shrines', ShrineController::class);
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');

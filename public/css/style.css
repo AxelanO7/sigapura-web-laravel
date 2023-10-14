@@ -6,8 +6,9 @@ html {
 }
 
 body {
+    min-height: auto;
     background: linear-gradient(to bottom, #ff8f49, #ff6200);
-    overflow-y: hidden;
+    /* overflow-x: hidden; */
 }
 
 a {
