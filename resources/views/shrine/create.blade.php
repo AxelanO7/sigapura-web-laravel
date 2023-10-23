@@ -12,7 +12,7 @@
         </div>
     @endif
 
-    <div class="container my-5 py-5">
+    <div class="container py-5 py-5">
         <h2>Tambah Data Pelinggih</h2>
         <a class="btn btn-primary" href="{{ route('shrines.index') }}"> Kembali</a>
         <form action="{{ route('shrines.store') }}" method="POST">

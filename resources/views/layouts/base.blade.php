@@ -8,10 +8,11 @@
         crossorigin="anonymous">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid min-vh-100" style="background-color: #f2f7ff">
         @yield('content')
     </div>
 </body>
